@@ -27,7 +27,7 @@ Product.init(
         isDecimal: true
       }
     },
-    quality: {
+    quatity: {
       type: DataTypes.DECIMAL,
       allowNull: false,
       validate: {
@@ -47,7 +47,14 @@ Product.init(
         model: "category",
         key: "id"
       }
+    },
+    photo_id: {
+    type: DataTypes.INTEGER,
+    references: {
+      model: "photo",
+      key: "id"
     }
+  }
   },
   {
     sequelize,
