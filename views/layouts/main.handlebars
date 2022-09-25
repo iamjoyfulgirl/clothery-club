@@ -6,7 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ClotheryClub</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link type="text/css" rel="stylesheet" href="/css/jass.css" />
+  <link type="text/css" rel="stylesheet" href="/public/css/style.css">
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 
 <body>
@@ -83,9 +90,6 @@
     </header>
 
     <main>
-      {{#if body}}
-      {{{ body }}}
-      {{else}}
       <main>
         <section class="section py-0 is-relative is-clipped has-background-link-light">
           <div class="container">
@@ -106,21 +110,105 @@
           <img class="mt-20 is-hidden-desktop" src="https://wallpapercave.com/wp/wp4312585.jpg" alt="">
         </section>
 
+
+        <!-- Carousel wrapper -->
+        <div id="carouselMultiItemExample" class="carousel slide carousel-dark text-center" data-mdb-ride="carousel">
+          <!-- Controls -->
+          <div class="d-flex justify-content-center mb-4">
+            <button class="carousel-control-prev position-relative" type="button"
+              data-mdb-target="#carouselMultiItemExample" data-mdb-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next position-relative" type="button"
+              data-mdb-target="#carouselMultiItemExample" data-mdb-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          <!-- Inner -->
+          <div class="carousel-inner py-4">
+            <!-- Single item -->
+            <div class="carousel-item active">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-4">
+                    <div class="card">
+                      <a href="/type/woman">
+                        <img
+                          src="https://media.istockphoto.com/photos/young-african-american-woman-wearing-headphones-listening-to-music-in-picture-id1320722435?b=1&k=20&m=1320722435&s=170667a&w=0&h=5EqzX-UcAu-ScQliI13RyHgy6uO4OOZaraeiAqdn7Ys="
+                          class="card-img-top" />
+                      </a>
+                      <div class="card-body">
+                        <h5 class="card-title">WOMAN</h5>
+                        <p class="card-text">
+                          New colection 2022
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-4 d-none d-lg-block">
+                    <div class="card">
+                      <a href="/type/footwear">
+
+                        <img
+                          src="https://64.media.tumblr.com/1918c1c8d53e6c4af29deed6d013cc9b/tumblr_p0pp6awdef1valq9yo1_1280.jpg"
+                          class="card-img-top" alt="" />
+                      </a>
+                      <div class="card-body">
+                        <h5 class="card-title">FOOTWEAR</h5>
+                        <p class="card-text">
+                          Fall 2022
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-4 d-none d-lg-block">
+                    <div class="card">
+                      <a href="/type/man">
+
+                        <img
+                          src="https://img.freepik.com/free-photo/portrait-attractive-man-wearing-specs-looking-far-away-isolated-dark-neon-purple-color-background_231208-14359.jpg?w=360"
+                          class="card-img-top" alt="Sunset Over the Sea" />
+                      </a>
+                      <div class="card-body">
+                        <h5 class="card-title">MAN</h5>
+                        <p class="card-text">
+                          New in
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <section class="section has-background-light is-clipped">
           <div class="container">
             <h2 class="title mb-16 mb-24-tablet">Discover our products</h2>
-
+            {{> product}}
+            {{> product}}
+            {{> product}}
+            {{> product}}
+            {{> product}}
+            {{> product}}
+            {{> product}}
+            {{> product}}
           </div>
         </section>
-      {{/if}}
       </main>
       <footer class="footer rows pb-2">
         <div class="row-is-full content has-text-centered">
           <p>© 2022 clotheryClub. All rights reserved.</p>
         </div>
       </footer>
+    </main>
   </div>
-
   {{#if loggedIn}}
   <script src="/js/logout.js"></script>
   {{/if}}
