@@ -1,0 +1,14 @@
+<section class="section has-background-light is-clipped">
+    <a href="/type/{{id}}">
+        <div class="container">
+            <h2 class="title mb-16 mb-24-tablet">{{type_name}}</h2>
+            <hr>
+            <hr>
+            <div class="mb-20 columns is-multiline">
+                {{#each type}}
+                {{> product}}
+                {{/each}}
+            </div>
+        </div>
+    </a>
+</section>
