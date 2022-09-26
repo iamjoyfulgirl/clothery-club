@@ -36,13 +36,27 @@ ProductOption.init( //(option: color and size)
                 model: "value",
                 key: "id"
             }
+        },
+        quantity: {
+            type: DataTypes.DECIMAL,
+            allowNull: false,
+            validate: {
+                isDecimal: true
+            }
+        },
+        photo_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: "photo",
+                key: "id"
+            }
         }
     }, {
         sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'product_option',
+        modelName: 'productoption',
     }
 );
 
