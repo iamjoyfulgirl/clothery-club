@@ -4,7 +4,6 @@
       <div class="w-full lg:w-1/2 px-4 mb-16 lg:mb-0">
         <div class="flex -mx-4 flex-wrap items-center justify-between lg:justify-start lg:items-start xl:items-center">
           <div class="w-full sm:w-auto min-w-max px-4 text-center flex sm:flex-col items-center justify-center">
-            {{#each product.id }}
             <a class="inline-block sm:mb-12 mr-4 sm:mr-0 transform -rotate-90 sm:transform-none hover:text-darkBlueGray-400"
               href="#">
               <svg width="12" height="8" viewbox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -13,17 +12,18 @@
                   fill="currentColor"></path>
               </svg>
             </a>
-            <a class="h-30 block mb-4 mr-2 sm:mr-0" href="/photo/0">
-              <img class="h-30 w-20" src="/photo/{{photo.[0].filename}}" alt="">
+            <a class="h-30 block mb-4 mr-2 sm:mr-0" href="/product/{{id}}">
+              <img class="h-30 w-20" src="{{photo_url.[0]}}" alt="">
             </a>
-            <a class="hidden sm:block h-30 mb-4 mr-2 sm:mr-0" href="/photo/1">
-              <img class="h-30 w-20" src="/photo/{{photo.[1].filename}}" alt="">
+            <a class="hidden sm:block h-30 mb-4 mr-2 sm:mr-0" href="/product/{{id}}">
+              <img class="h-30 w-20" src="{{photo_url.[1]}}" alt="">
             </a>
-            <a class="hidden sm:block h-30 mb-4 mr-2 sm:mr-0 rounded-xl border-2 border-blueGray-500" href="/photo/2">
-              <img class="h-30 w-20" src="/photo/{{photo.[2].filename}}" alt="">
+            <a class="hidden sm:block h-30 mb-4 mr-2 sm:mr-0 rounded-xl border-2 border-blueGray-500"
+              href="/product/{{id}}">
+              <img class="h-30 w-20" src="{{photo_url.[2]}}" alt="">
             </a>
-            <a class="h-30 block mb-4 sm:mb-12 mr-4 sm:mr-0" href="/photo/3">
-              <img class="h-30 w-20" src="/photo/{{photo.[3].filename}}" alt="">
+            <a class="h-30 block mb-4 sm:mb-12 mr-4 sm:mr-0" href="/product/{{id}}">
+              <img class="h-30 w-20" src="{{photo_url.[3]}}" alt="">
             </a>
             <a class="inline-block transform -rotate-90 sm:transform-none hover:text-darkBlueGray-400" href="#">
               <svg width="12" height="8" viewbox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -34,7 +34,7 @@
             </a>
           </div>
           <div class="w-full sm:w-9/12 px-4">
-            <img class="mb-5" src="/photo/{{photo.[4].filename}}" alt="">
+            <img class="mb-5" src="{{photo_url.[4]}}" alt="">
             <p class="text-sm text-gray-300">Roll over image to zoom in</p>
           </div>
         </div>
@@ -42,7 +42,7 @@
       <div class="w-full lg:w-1/2 px-4">
         <div class="max-w-md mb-6">
           <span class="text-xs text-gray-400 tracking-wider"></span>
-          <h2 class="mt-6 mb-4 text-5xl md:text-7xl lg:text-8xl font-heading font-medium">{{product_name}}</h2>
+          <h2 class="mt-6 mb-4 text-5xl md:text-7xl lg:text-8xl font-heading font-medium">{{name}}</h2>
           <p class="flex items-center mb-6">
             <span class="mr-2 text-sm text-blue-500 font-medium">$</span>
             <span class="text-3xl text-blue-500 font-medium">{{price}}</span>
@@ -50,28 +50,29 @@
         </div>
         <div class="mb-6">
           <h4 class="mb-3 font-heading font-medium">
-            <span>{{option.[0].option_name}}:</span> {{!-- only have 2 option: color and size, color has option id 0 and
+            <span>Color:</span> {{!-- only have 2 option: color and size, color has option id 0 and
             size option id 1 --}}
             {{!-- option 0 is Color --}}
             <span class="text-gray-400"></span>
           </h4>
-          {{#each option.[0] }} {{!-- only have 2 option: color and size --}}
+          {{#each color }} {{!-- only have 2 option: color and size --}}
           <button class="inline-flex items-center justify-center p-1 rounded-full border border-transparent">
-            <div class="w-6 h-6 rounded-full bg-{{value.value_name}}"></div>
+            <div class="w-6 h-6 rounded-full bg-{{this.color}}"></div>
           </button>
           {{/each}}
         </div>
         <div class="mb-6">
           <h4 class="mb-3 font-heading font-medium">
-            <span>{{option.[1].option_name}}:</span> {{!-- option 1 is Size --}}
+            <span>Size:</span> {{!-- option 1 is Size --}}
             <span class="text-gray-400"></span>
           </h4>
-          {{#each option.[1] }}
+          {{#each size }}
           <button class="inline-flex items-center justify-center p-1 rounded-full border border-gray-300">
             <div class="w-6 h-6 rounded-full">
-              <p>{{value.value_name}}</p>
+              <p>{{this.size}}</p>
             </div>
           </button>
+          {{/each}}
         </div>
         <div class="mb-10">
           <h4 class="mb-3 font-heading font-medium">Qty:</h4>

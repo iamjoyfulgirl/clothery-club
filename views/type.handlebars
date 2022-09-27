@@ -1,14 +1,16 @@
 <section class="section has-background-light is-clipped">
-    <a href="/type/{{id}}">
+    {{#each type}}
+    <a href="/type/{{this.type}}">
         <div class="container">
-            <h2 class="title mb-16 mb-24-tablet">{{type_name}}</h2>
+            <h2 class="title mb-16 mb-24-tablet">{{this.type}}</h2>
             <hr>
             <hr>
             <div class="mb-20 columns is-multiline">
-                {{#each type}}
+                {{#each product}}
                 {{> product}}
                 {{/each}}
             </div>
         </div>
     </a>
+    {{/each}}
 </section>
