@@ -18,7 +18,15 @@ Product.init({
     primaryKey: true,
     autoIncrement: true
   },
-  product_name: {
+  name: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  type: { //(3 type: woman, man, footwear)
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  category: {
     type: DataTypes.STRING,
     allowNull: false
   },
@@ -29,25 +37,30 @@ Product.init({
       isDecimal: true
     }
   },
-  product_type_id: {
+  photo_url: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  color: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  size: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  cart_id: {
     type: DataTypes.INTEGER,
     references: {
-      model: "type",
-      key: "id"
+      model: 'cart',
+      key: 'id'
     }
   },
-  category_id: {
+  user_id: {
     type: DataTypes.INTEGER,
     references: {
-      model: "category",
-      key: "id"
-    }
-  },
-  photo_id: {
-    type: DataTypes.INTEGER,
-    references: {
-      model: "photo",
-      key: "id"
+      model: 'user',
+      key: 'id'
     }
   }
 }, {
