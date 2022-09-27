@@ -32,27 +32,10 @@ router.get('/:id', (req, res) => {
             },
             include: {
                 model: Cart,
-                attributes: ['id', 'product_option_id'],
+                attributes: ['id'],
                 include: {
-                    model: ProductOption,
-                    attributes: ['product_id', 'option_id', 'value_id', 'quantity', 'photo_id'],
-                    include: [{
-                            model: Product,
-                            attributes: ['product_name', 'price', 'quatity']
-                        },
-                        {
-                            model: Option,
-                            attributes: ['option_name']
-                        },
-                        {
-                            model: Value,
-                            attributes: ['value_name']
-                        },
-                        {
-                            model: Photo,
-                            attributes: ['filename']
-                        }
-                    ]
+                    model: Product,
+                    attributes: ['id', 'name', 'type', 'category', 'price', 'photo_url', 'color', 'size'],
                 }
             }
         })
