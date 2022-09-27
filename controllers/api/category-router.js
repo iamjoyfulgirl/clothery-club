@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Category } = require('../models');
+const { Category } = require('../../models');
 
 // GET all categories for homepage
 router.get('/', async (req, res) => {
@@ -27,7 +27,7 @@ router.get('/', async (req, res) => {
 });
 
 // GET one category
-router.get('/category/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
     try {
         const dbCatagoryData = await Category.findByPk(req.params.id, {
             include: [

@@ -29,13 +29,6 @@ Product.init({
       isDecimal: true
     }
   },
-  quatity: {
-    type: DataTypes.DECIMAL,
-    allowNull: false,
-    validate: {
-      isDecimal: true
-    }
-  },
   product_type_id: {
     type: DataTypes.INTEGER,
     references: {
