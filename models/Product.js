@@ -38,7 +38,7 @@ Product.init({
     }
   },
   photo_url: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.STRING,
     allowNull: false
   },
   color: {
