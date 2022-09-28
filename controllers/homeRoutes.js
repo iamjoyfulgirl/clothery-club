@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const { Product, User } = require('../../models');
-const withAuth = require('../utils/auth');
+const sequelize = require('../config/connection');
+const { Product, User } = require('../models');
 
 router.get('/', async (req, res) => {
   try {
@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ['username'],
         },
       ],
     });
@@ -33,7 +33,7 @@ router.get('/product/:id', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ['username'],
         },
       ],
     });
