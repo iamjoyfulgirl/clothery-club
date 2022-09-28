@@ -11,7 +11,6 @@ async function signupFormHandler(event) {
             body: JSON.stringify({
                 username,
                 email,
-                github,
                 password
             }),
             headers: {
