@@ -1,0 +1,39 @@
+<table class="checkout">
+    <tr>
+        <td> title </td>
+        <td> price </td>
+        <td> quantity</td>
+    </tr>
+{{#each checkoutitem}}
+<tr>
+        <td> {{title}} </td>
+        <td>  {{price}} </td>
+        <td>  {{quantity}} </td>
+</tr>
+
+{{/each}}
+</table>
+<div id="footer">
+Total Price is {{total_price}} <br>
+
+<a href="/fetchproducts"> Click here to go back to the products page </a>
+</div>
+
+<form method="POST" action="/updatecart">
+    <table>
+        <tr>
+            <td> title </td>
+            <td> price </td>
+            <td> quantity</td>
+        </tr>
+{{#each cartitems}}
+    <tr>
+    <tr>
+    <td> {{title}} </td>
+    <td>  {{price}} </td>
+    <td> <input type="text" name="{{title}}" value="{{quantity}}" onkeyup="checkoutdis()"> </td>
+    </tr>
+{{/each}}
+    </table>
+    <div id="footer">
+Total Price is {{total_price}} <br>
