@@ -13,6 +13,7 @@
                   fill="currentColor"></path>
               </svg>
             </a>
+            {{/each}}
             <a class="h-30 block mb-4 mr-2 sm:mr-0" href="/photo/0">
               <img class="h-30 w-20" src="/photo/{{photo.[0].filename}}" alt="">
             </a>
@@ -72,6 +73,7 @@
               <p>{{value.value_name}}</p>
             </div>
           </button>
+          {{/each}}
         </div>
         <div class="mb-10">
           <h4 class="mb-3 font-heading font-medium">Qty:</h4>
