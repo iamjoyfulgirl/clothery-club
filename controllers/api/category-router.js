@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Category } = require('../../models');
 
-// GET all categories for homepage
+// GET all categories for home
 router.get('/', async (req, res) => {
     try {
         const dbCategoryData = await Category.findAll({
@@ -17,8 +17,8 @@ router.get('/', async (req, res) => {
             category.get({ plain: true })
         );
 
-        res.render('homepage', {
-            categories,
+        res.render('home', {
+            category,
         });
     } catch (err) {
         console.log(err);
