@@ -11,7 +11,6 @@ async function signupFormHandler(event) {
             body: JSON.stringify({
                 username,
                 email,
-                github,
                 password
             }),
             headers: {
@@ -22,7 +21,7 @@ async function signupFormHandler(event) {
         // check the response status
         if (response.ok) {
             console.log('success');
-            document.location.replace('/');
+            document.location.replace('/cart');
         } else {
             alert(response.statusText);
         }
