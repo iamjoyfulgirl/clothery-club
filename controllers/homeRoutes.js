@@ -1,36 +1,50 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Product, User } = require('../models');
+const {
+  Product,
+  User
+} = require('../models');
 
-router.get('/', async (req, res) => {
-  try {
-    // Get all products and JOIN with user data
-    const productData = await Product.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['username'],
-        },
+router.get('/', (req, res) => {
+  console.log(req.session);
+
+  Product.findAll({
+      attributes: [
+        'id',
+        'name',
+        'type',
+        'category',
+        'price',
+        'photo_url',
+        'color',
+        'size'
       ],
+      include: [{
+    
+        model: User,
+        attributes: ['username']
+    }
+]
+    })
+    .then(dbProductData => {
+      const product = dbProductData.map(product => product.get({
+        plain: true
+      }));
+      res.render('home', {
+        product,
+        // loggedIn: req.session.loggedIn
+      });
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
     });
-
-    // Serialize data so the template can read it
-    const products = productData.map((product) => product.get({ plain: true }));
-
-    // Pass serialized data and session flag into template
-    res.render('home', {
-      products,
-      logged_in: req.session.logged_in
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
 });
 
 router.get('/signup', (req, res) => {
   if (req.session.logged_in) {
-      res.redirect('/');
-      return;
+    res.redirect('/');
+    return;
   }
   res.render('signup');
 });
@@ -38,15 +52,15 @@ router.get('/signup', (req, res) => {
 router.get('/product/:id', async (req, res) => {
   try {
     const productData = await Project.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ['username'],
-        },
-      ],
+      include: [{
+        model: User,
+        attributes: ['username'],
+      }, ],
     });
 
-    const product = productData.get({ plain: true });
+    const product = productData.get({
+      plain: true
+    });
 
     res.render('product', {
       ...product,
