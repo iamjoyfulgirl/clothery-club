@@ -1,3 +1,5 @@
+// const Swal = require('sweetalert2');
+
 async function signupFormHandler(event) {
     event.preventDefault();
 
@@ -23,7 +25,7 @@ async function signupFormHandler(event) {
             // console.log('success');
             document.location.replace('/');
         } else {
-            alert('Username or email already in use. Please log in, or sign up with a different username and email address.');
+            Swal.fire('Username or email already in use. Please log in, or sign up with a different username and email address.');
         }
     }
 };

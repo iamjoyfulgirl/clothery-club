@@ -8,7 +8,7 @@ router.get('/man', async(req, res) => {
           type: "Men"
       },
       attributes: [
-        'id', 'name', 'type', 'category', 'price', 'photo_url', 'color', 'size'
+        'id', 'name', 'type', 'category', 'price', 'photo_url'
       ]})
   
       const type = dbProductData.get({ plain: true });
