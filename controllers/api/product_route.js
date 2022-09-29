@@ -1,13 +1,13 @@
 const router = require('express').Router();
-const { Products, User } = require('../../models');
+const { Product, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    const productsData = await Products.findAll({
+    const productsData = await Product.findAll({
       include: [
         {
-          model: User,
+          model: Product,
           attributes: ['products'],
         },
       ],
@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
 
     const products = productsData.map((products) => products.get({ plain: true }));
 
-    res.render('homepage', { 
+    res.render('home', { 
       projects: products, 
       logged_in: req.session.logged_in 
     });
@@ -26,10 +26,10 @@ router.get('/', async (req, res) => {
 
 router.get('/products/:id', async (req, res) => {
   try {
-    const productsData = await Products.findByPk(req.params.id, {
+    const productsData = await Product.findByPk(req.params.id, {
       include: [
         {
-          model: User,
+          model: Product,
           attributes: ['products'],
         },
       ],
@@ -46,7 +46,7 @@ router.get('/products/:id', async (req, res) => {
   }
 });
 
-router.get('/homepage', withAuth, async (req, res) => {
+router.get('/home', withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
