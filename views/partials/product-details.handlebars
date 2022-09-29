@@ -12,7 +12,7 @@
                   fill="currentColor"></path>
               </svg>
             </a>
-            <a class="h-30 block mb-4 mr-2 sm:mr-0" href="/product/{{id}}">
+            {{!-- <a class="h-30 block mb-4 mr-2 sm:mr-0" href="/product/{{id}}">
               <img class="h-30 w-20" src="/photo/{{photo_url}}" alt="">
             </a>
             <a class="hidden sm:block h-30 mb-4 mr-2 sm:mr-0" href="/product/{{id}}">
@@ -24,7 +24,7 @@
             </a>
             <a class="h-30 block mb-4 sm:mb-12 mr-4 sm:mr-0" href="/product/{{id}}">
               <img class="h-30 w-20" src="{{photo_url}}" alt="">
-            </a>
+            </a> --}}
             <a class="inline-block transform -rotate-90 sm:transform-none hover:text-darkBlueGray-400" href="#">
               <svg width="12" height="8" viewbox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -48,32 +48,32 @@
             <span class="text-3xl text-blue-500 font-medium">{{price}}</span>
           </p>
         </div>
-        <div class="mb-6">
+        {{!-- <div class="mb-6">
           <h4 class="mb-3 font-heading font-medium">
             <span>Color:</span> {{!-- only have 2 option: color and size, color has option id 0 and
             size option id 1 --}}
             {{!-- option 0 is Color --}}
             <span class="text-gray-400"></span>
           </h4>
-          {{!-- {{#each color }}  --}}
+          {{#each color }} 
           <button class="inline-flex items-center justify-center p-1 rounded-full border border-transparent">
             <div class="w-6 h-6 rounded-full bg-{{this.color}}"></div>
           </button>
-          {{!-- {{/each}} --}}
+          {{/each}}
         </div>
         <div class="mb-6">
           <h4 class="mb-3 font-heading font-medium">
             <span>Size:</span> {{!-- option 1 is Size --}}
             <span class="text-gray-400"></span>
           </h4>
-          {{!-- {{#each size }} --}}
+          {{#each size }}
           <button class="inline-flex items-center justify-center p-1 rounded-full border border-gray-300">
             <div class="w-6 h-6 rounded-full">
               <p>{{size}}</p>
             </div>
           </button>
-          {{!-- {{/each}} --}}
-        </div>
+          {{/each}}
+        </div> --}}
         <div class="mb-10">
           <h4 class="mb-3 font-heading font-medium">Qty:</h4>
           <input

@@ -45,10 +45,6 @@ Product.init({
     type: DataTypes.STRING,
     allowNull: false
   },
-  size: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
   cart_id: {
     type: DataTypes.INTEGER,
     references: {
