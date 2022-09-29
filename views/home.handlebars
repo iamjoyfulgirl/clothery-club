@@ -42,7 +42,7 @@
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="card">
-                            <a href="/type/woman">
+                            <a id="woman" href="/type/woman">
                                 <img src="https://media.istockphoto.com/photos/young-african-american-woman-wearing-headphones-listening-to-music-in-picture-id1320722435?b=1&k=20&m=1320722435&s=170667a&w=0&h=5EqzX-UcAu-ScQliI13RyHgy6uO4OOZaraeiAqdn7Ys="
                                     class="card-img-top" />
                             </a>
@@ -57,7 +57,7 @@
 
                     <div class="col-lg-4 d-none d-lg-block">
                         <div class="card">
-                            <a href="/type/footwear">
+                            <a id="footwear" href="/type/footwear">
 
                                 <img src="https://64.media.tumblr.com/1918c1c8d53e6c4af29deed6d013cc9b/tumblr_p0pp6awdef1valq9yo1_1280.jpg"
                                     class="card-img-top" alt="" />
@@ -73,7 +73,7 @@
 
                     <div class="col-lg-4 d-none d-lg-block">
                         <div class="card">
-                            <a href="/type/man">
+                            <a id="man" href="/type/man">
 
                                 <img src="https://img.freepik.com/free-photo/portrait-attractive-man-wearing-specs-looking-far-away-isolated-dark-neon-purple-color-background_231208-14359.jpg?w=360"
                                     class="card-img-top" alt="Sunset Over the Sea" />
@@ -96,8 +96,13 @@
 <section class="section has-background-light is-clipped">
     <div class="container">
         <h2 class="title mb-16 mb-24-tablet">Discover our products</h2>
-        {{#each products as |product| }}
-        {{> product}}
-        {{/each}}
-    </div>
+        <div class="mb-20 columns is-multiline">
+
+            {{#each products as |product| }}
+            {{> product}}
+            {{/each}}
+        </div>
 </section>
+
+<script src="/js/category.js"></script>
+<script src="/js/type.js"></script>

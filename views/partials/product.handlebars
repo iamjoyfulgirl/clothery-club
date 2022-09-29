@@ -1,11 +1,10 @@
 <div class="column is-3-desktop is-6-tablet">
     <div class="has-background-white pt-4 px-10 pb-10 is-relative">
         <a class="mt-6 mb-2 px-6 is-block" href="/product/{{id}}">
-            <img class="mx-auto mb-5 image" style="height: 224px; object-fit: contain;" src="{{photo_url.[4]}}"
-                alt="">
+            <img class="mx-auto mb-5 image" style="height: 224px; object-fit: contain;" src="{{photo_url}}" alt="">
             <h5 class="title is-size-5 mb-2">{{name}}</h5>
             <p class="has-text-info is-size-5 has-text-weight-bold">{{price}}</p>
-            {{#each product.id}}
+            {{#each product.id }}
             {{> product-details}}
             {{/each}}
         </a>
