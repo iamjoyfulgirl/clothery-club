@@ -6,7 +6,7 @@ async function loginFormHandler(event) {
 
   if (email && password) {
     const response = await fetch('/api/users/login', {
-      method: 'post',
+      method: 'POST',
       body: JSON.stringify({
         email,
         password
@@ -20,9 +20,9 @@ async function loginFormHandler(event) {
       // If successful, redirect the browser to the home page
       document.location.replace('/');
     } else {
-      alert(response.statusText);
+      alert('Failed to log in. Please try again.');
     }
   }
-}
+};
 
 document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
