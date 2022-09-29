@@ -7,7 +7,7 @@ async function signupFormHandler(event) {
 
     if (username && email && password) {
         const response = await fetch('/api/users', {
-            method: 'post',
+            method: 'POST',
             body: JSON.stringify({
                 username,
                 email,
@@ -20,12 +20,12 @@ async function signupFormHandler(event) {
 
         // check the response status
         if (response.ok) {
-            console.log('success');
+            // console.log('success');
             document.location.replace('/');
         } else {
-            alert(response.statusText);
+            alert('Username or email already in use. Please log in, or sign up with a different username and email address.');
         }
     }
-}
+};
 
 document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);

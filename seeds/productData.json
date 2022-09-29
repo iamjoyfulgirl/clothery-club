@@ -1,0 +1,29 @@
+[
+    {
+        "name": "Men's Belt",
+        "type": "Men",
+        "category": "Accessory",
+        "color": "Black",
+        "size": "One-Size",
+        "price": 100.00,
+        "photo_url": "https://i.imgur.com/58KK31O.jpg"
+    },
+    {
+        "name": "Men's Boot",
+        "type": "Men",
+        "category": "Footwear",
+        "color": "Black",
+        "size": "One-Size",
+        "price": 400.00,
+        "photo_url": "https://i.imgur.com/8nDhxtl.jpg"
+    },
+    {
+        "name": "Men's Blazer",
+        "type": "Men",
+        "category": "Outerwear",
+        "color": "Black",
+        "size": "One-Size",
+        "price": 320.00,
+        "photo_url": "https://i.imgur.com/Ts4BhDI.jpg"
+    }
+]

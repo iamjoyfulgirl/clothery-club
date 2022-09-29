@@ -6,14 +6,36 @@ const {
 } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+
+
+// CREATE new user
+router.post('/', async (req, res) => {
+    try {
+        const dbUserData = await User.create({
+            username: req.body.username,
+            email: req.body.email,
+            password: req.body.password,
+        });
+
+        req.session.save(() => {
+            req.session.loggedIn = true;
+
+            res.status(200).json(dbUserData);
+        });
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
+
 // GET /api/users
 router.get('/', (req, res) => {
     // Access our User model and run .findAll() method
     User.findAll({
-            attributes: {
-                exclude: ['password']
-            }
-        })
+        attributes: {
+            exclude: ['password']
+        }
+    })
         .then(dbUserData => res.json(dbUserData))
         .catch(err => {
             console.log(err);
@@ -24,21 +46,21 @@ router.get('/', (req, res) => {
 // GET /api/users/1
 router.get('/:id', (req, res) => {
     User.findOne({
-            attributes: {
-                exclude: ['password']
-            },
-            where: {
-                id: req.params.id
-            },
+        attributes: {
+            exclude: ['password']
+        },
+        where: {
+            id: req.params.id
+        },
+        include: {
+            model: Cart,
+            attributes: ['id'],
             include: {
-                model: Cart,
-                attributes: ['id'],
-                include: {
-                    model: Product,
-                    attributes: ['id', 'name', 'type', 'category', 'price', 'photo_url', 'color', 'size'],
-                }
+                model: Product,
+                attributes: ['id', 'name', 'type', 'category', 'price', 'photo_url', 'color', 'size'],
             }
-        })
+        }
+    })
         .then(dbUserData => {
             if (!dbUserData) {
                 res.status(404).json({
@@ -57,10 +79,10 @@ router.get('/:id', (req, res) => {
 // POST /api/users
 router.post('/', (req, res) => {
     User.create({
-            username: req.body.username,
-            email: req.body.email,
-            password: req.body.password,
-        })
+        username: req.body.username,
+        email: req.body.email,
+        password: req.body.password,
+    })
         .then(dbUserData => {
             req.session.save(() => {
                 req.session.user_id = dbUserData.id;
@@ -114,8 +136,8 @@ router.post('/logout', (req, res) => {
         req.session.destroy(() => {
             res.status(204).end();
         });
-    // } else {
-    //     res.status(404).end();
+        // } else {
+        //     res.status(404).end();
     }
 });
 

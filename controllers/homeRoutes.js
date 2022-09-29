@@ -5,40 +5,20 @@ const {
   User
 } = require('../models');
 
-router.get('/', (req, res) => {
-  console.log(req.session);
+router.get('/', async (req, res) => {
+  try {
+    // Get all products and JOIN with user data
+    const productData = await Product.findAll({});
+    // Serialize data so the template can read it
+    const products = productData.map((product) => product.get({ plain: true }));
 
-  Product.findAll({
-      attributes: [
-        'id',
-        'name',
-        'type',
-        'category',
-        'price',
-        'photo_url',
-        'color',
-        'size'
-      ],
-      include: [{
-    
-        model: User,
-        attributes: ['username']
-    }
-]
-    })
-    .then(dbProductData => {
-      const product = dbProductData.map(product => product.get({
-        plain: true
-      }));
-      res.render('home', {
-        product,
-        // loggedIn: req.session.loggedIn
-      });
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
+    // Pass serialized data and session flag into template
+    res.render('home', {
+      products
     });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 router.get('/signup', (req, res) => {
