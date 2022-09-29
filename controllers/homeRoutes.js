@@ -1,26 +1,19 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Product, User } = require('../models');
+// const productData = require('../seeds/productData');
 
 router.get('/', async (req, res) => {
   try {
     // Get all products and JOIN with user data
-    const productData = await Product.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['username'],
-        },
-      ],
-    });
-
+    const productData = await Product.findAll({});
+    console.log(productData);
     // Serialize data so the template can read it
     const products = productData.map((product) => product.get({ plain: true }));
 
     // Pass serialized data and session flag into template
     res.render('home', {
-      products,
-      logged_in: req.session.logged_in
+      products
     });
   } catch (err) {
     res.status(500).json(err);
