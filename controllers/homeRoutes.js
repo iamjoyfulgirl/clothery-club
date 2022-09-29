@@ -32,7 +32,6 @@ router.get('/signup', (req, res) => {
       res.redirect('/');
       return;
   }
-
   res.render('signup');
 });
 
