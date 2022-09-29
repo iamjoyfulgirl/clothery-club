@@ -1,3 +1,5 @@
+// const Swal = require('sweetalert2');
+
 async function loginFormHandler(event) {
   event.preventDefault();
 
@@ -20,7 +22,7 @@ async function loginFormHandler(event) {
       // If successful, redirect the browser to the home page
       document.location.replace('/');
     } else {
-      alert('Failed to log in. Please try again.');
+      Swal.fire('Failed to log in. Please try again.');
     }
   }
 };
