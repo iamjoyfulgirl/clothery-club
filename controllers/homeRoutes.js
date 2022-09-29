@@ -1,6 +1,9 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Product, User } = require('../models');
+const {
+  Product,
+  User
+} = require('../models');
 
 router.get('/', async (req, res) => {
   try {
@@ -11,7 +14,8 @@ router.get('/', async (req, res) => {
 
     // Pass serialized data and session flag into template
     res.render('home', {
-      products
+      products,
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
@@ -20,8 +24,8 @@ router.get('/', async (req, res) => {
 
 router.get('/signup', (req, res) => {
   if (req.session.logged_in) {
-      res.redirect('/');
-      return;
+    res.redirect('/');
+    return;
   }
   res.render('signup');
 });
@@ -29,17 +33,14 @@ router.get('/signup', (req, res) => {
 router.get('/product/:id', async (req, res) => {
   try {
     const productData = await Project.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ['username'],
-        },
-      ],
+      attributes: ['id', 'name', 'type', 'category', 'price', 'photo_url', 'color', 'size']
     });
 
-    const product = productData.get({ plain: true });
+    const product = productData.get({
+      plain: true
+    });
 
-    res.render('product', {
+    res.render('product-details', {
       ...product,
       logged_in: req.session.logged_in
     });
