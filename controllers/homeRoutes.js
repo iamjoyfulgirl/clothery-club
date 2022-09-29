@@ -5,6 +5,24 @@ const {
   User
 } = require('../models');
 
+router.get('/product/:id', async (req, res) => {
+  try {
+    const productData = await Product.findByPk(req.params.id, {
+      attributes: ['id', 'name', 'type', 'category', 'price', 'photo_url']
+    });
+    console.log('line 38', productData);
+
+    const product = productData.get({
+      plain: true
+    });
+    console.log('line 43', product);
+
+    res.render('product-details', { product });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.get('/', async (req, res) => {
   try {
     // Get all products and JOIN with user data
@@ -30,23 +48,7 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
-router.get('/product/:id', async (req, res) => {
-  try {
-    const productData = await Project.findByPk(req.params.id, {
-      attributes: ['id', 'name', 'type', 'category', 'price', 'photo_url']
-    });
 
-    const product = productData.get({
-      plain: true
-    });
-
-    res.render('product-details', {
-      ...product,
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
 
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
