@@ -34,7 +34,7 @@ router.get('/outerwear', async(req, res) => {
               category: "Outerwear"
           },
           attributes: [
-            'id', 'name', 'type', 'category', 'price', 'photo_url', 'color', 'size'
+            'id', 'name', 'type', 'category', 'price', 'photo_url'
           ]})
       
           const category = dbProductData.get({ plain: true });

@@ -33,7 +33,7 @@ router.get('/signup', (req, res) => {
 router.get('/product/:id', async (req, res) => {
   try {
     const productData = await Project.findByPk(req.params.id, {
-      attributes: ['id', 'name', 'type', 'category', 'price', 'photo_url', 'color', 'size']
+      attributes: ['id', 'name', 'type', 'category', 'price', 'photo_url']
     });
 
     const product = productData.get({
@@ -42,7 +42,6 @@ router.get('/product/:id', async (req, res) => {
 
     res.render('product-details', {
       ...product,
-      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);

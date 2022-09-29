@@ -1,29 +1,310 @@
 [
     {
-        "name": "Men's Belt",
+        "name": "Men's Black Belt",
         "type": "Men",
         "category": "Accessory",
-        "color": "Black",
-        "size": "One-Size",
         "price": 100.00,
         "photo_url": "https://i.imgur.com/58KK31O.jpg"
     },
     {
-        "name": "Men's Boot",
+        "name": "Men's Brown Belt",
+        "type": "Men",
+        "category": "Accessory",
+        "price": 100.00,
+        "photo_url": "https://i.imgur.com/KjjiPsb.jpg"
+    },
+    {
+        "name": "Men's Black Boot",
         "type": "Men",
         "category": "Footwear",
-        "color": "Black",
-        "size": "One-Size",
         "price": 400.00,
         "photo_url": "https://i.imgur.com/8nDhxtl.jpg"
     },
     {
-        "name": "Men's Blazer",
+        "name": "Men's Brown Boot",
+        "type": "Men",
+        "category": "Footwear",
+        "price": 400.00,
+        "photo_url": "https://i.imgur.com/uZBpp0t.jpg"
+    },
+    {
+        "name": "Men's Black Blazer",
         "type": "Men",
         "category": "Outerwear",
-        "color": "Black",
-        "size": "One-Size",
         "price": 320.00,
         "photo_url": "https://i.imgur.com/Ts4BhDI.jpg"
+    },
+    {
+        "name": "Men's Grey Blazer",
+        "type": "Men",
+        "category": "Outerwear",
+        "price": 320.00,
+        "photo_url": "https://i.imgur.com/1GKT9gD.jpg"
+    },
+    {
+        "name": "Men's Blue Blazer",
+        "type": "Men",
+        "category": "Outerwear",
+        "price": 320.00,
+        "photo_url": "https://i.imgur.com/V8qfGOR.jpg"
+    },
+    {
+        "name": "Men's Black Fedora",
+        "type": "Men",
+        "category": "Headwear",
+        "price": 120.00,
+        "photo_url": "https://i.imgur.com/7I4hrRd.jpg"
+    },
+    {
+        "name": "Men's Grey Fedora",
+        "type": "Men",
+        "category": "Headwear",
+        "price": 120.00,
+        "photo_url": "https://i.imgur.com/Jr2EwQj.jpg"
+    },
+    {
+        "name": "Men's Brown Fedora",
+        "type": "Men",
+        "category": "Headwear",
+        "price": 120.00,
+        "photo_url": "https://i.imgur.com/75EXIQ6.jpg"
+    },
+    {
+        "name": "Men's Black Long Sleeve",
+        "type": "Men",
+        "category": "Tops",
+        "price": 160.00,
+        "photo_url": "https://i.imgur.com/0A7nKJK.jpg"
+    },
+    {
+        "name": "Men's White Long Sleeve",
+        "type": "Men",
+        "category": "Tops",
+        "price": 160.00,
+        "photo_url": "https://i.imgur.com/554SrWS.jpg"
+    },
+    {
+        "name": "Men's Blue Long Sleeve",
+        "type": "Men",
+        "category": "Tops",
+        "price": 160.00,
+        "photo_url": "https://i.imgur.com/qu3i5Hg.jpg"
+    },
+    {
+        "name": "Men's Black Pant",
+        "type": "Men",
+        "category": "Bottoms",
+        "price": 220.00,
+        "photo_url": "https://i.imgur.com/btpzxNK.jpg"
+    },
+    {
+        "name": "Men's Grey Pant",
+        "type": "Men",
+        "category": "Bottoms",
+        "price": 220.00,
+        "photo_url": "https://i.imgur.com/bPxeKyp.jpg"
+    },
+    {
+        "name": "Men's Khaki Pant",
+        "type": "Men",
+        "category": "Bottoms",
+        "price": 220.00,
+        "photo_url": "https://i.imgur.com/VUct72f.jpg"
+    },
+    {
+        "name": "Men's Black Shoe",
+        "type": "Footwear",
+        "category": "Footwear",
+        "price": 400.00,
+        "photo_url": "https://i.imgur.com/yKjimpS.jpg"
+    },
+    {
+        "name": "Men's Brown Shoe",
+        "type": "Footwear",
+        "category": "Footwear",
+        "price": 400.00,
+        "photo_url": "https://i.imgur.com/0u2onEt.jpg"
+    },
+    {
+        "name": "Men's Black Tie",
+        "type": "Men",
+        "category": "Accessory",
+        "price": 100.00,
+        "photo_url": "https://i.imgur.com/KajOrc3.jpg"
+    },
+    {
+        "name": "Men's Blue Tie",
+        "type": "Men",
+        "category": "Accessory",
+        "price": 100.00,
+        "photo_url": "https://i.imgur.com/sHzgFCV.jpg"
+    },
+    {
+        "name": "Men's White Short Sleeve",
+        "type": "Men",
+        "category": "Tops",
+        "price": 160.00,
+        "photo_url": "https://i.imgur.com/PbQgRtO.jpg"
+    },
+    {
+        "name": "Men's Grey Short Sleeve",
+        "type": "Men",
+        "category": "Tops",
+        "price": 160.00,
+        "photo_url": "https://i.imgur.com/G2FrCEs.jpg"
+    },
+    {
+        "name": "Men's Blue Short Sleeve",
+        "type": "Men",
+        "category": "Tops",
+        "price": 160.00,
+        "photo_url": "https://i.imgur.com/oqwQbbm.jpg"
+    },
+    {
+        "name": "Women's Black Belt",
+        "type": "Women",
+        "category": "Accessory",
+        "price": 120.00,
+        "photo_url": "https://i.imgur.com/BfCoxf0.jpg"
+    },
+    {
+        "name": "Women's Brown Belt",
+        "type": "Women",
+        "category": "Accessory",
+        "price": 120.00,
+        "photo_url": "https://i.imgur.com/oJmUTHJ.jpg"
+    },
+    {
+        "name": "Women's Black Blouse",
+        "type": "Women",
+        "category": "Tops",
+        "price": 140.00,
+        "photo_url": "https://i.imgur.com/CENoPKa.jpg"
+    },
+    {
+        "name": "Women's White Blouse",
+        "type": "Women",
+        "category": "Tops",
+        "price": 140.00,
+        "photo_url": "https://i.imgur.com/3c19Sum.jpg"
+    },
+    {
+        "name": "Women's Blue Blouse",
+        "type": "Women",
+        "category": "Tops",
+        "price": 140.00,
+        "photo_url": "https://i.imgur.com/101PQuV.jpg"
+    },
+    {
+        "name": "Women's Black Boot",
+        "type": "Footwear",
+        "category": "Footwear",
+        "price": 375.00,
+        "photo_url": "https://i.imgur.com/yw8lvUc.jpg"
+    },
+    {
+        "name": "Women's Khaki Boot",
+        "type": "Footwear",
+        "category": "Footwear",
+        "price": 375.00,
+        "photo_url": "https://i.imgur.com/PHY49ER.jpg"
+    },
+    {
+        "name": "Women's Black Blazer",
+        "type": "Women",
+        "category": "Outerwear",
+        "price": 360.00,
+        "photo_url": "https://i.imgur.com/VikErte.jpg"
+    },
+    {
+        "name": "Women's Grey Blazer",
+        "type": "Women",
+        "category": "Outerwear",
+        "price": 360.00,
+        "photo_url": "https://i.imgur.com/p7uCRk1.jpg"
+    },
+    {
+        "name": "Women's Blue Blazer",
+        "type": "Women",
+        "category": "Outerwear",
+        "price": 360.00,
+        "photo_url": "https://i.imgur.com/18OoWOO.jpg"
+    },
+    {
+        "name": "Women's Black Fedora",
+        "type": "Women",
+        "category": "Headwear",
+        "price": 160.00,
+        "photo_url": "https://i.imgur.com/YYMLJTs.jpg"
+    },
+    {
+        "name": "Women's Grey Fedora",
+        "type": "Women",
+        "category": "Headwear",
+        "price": 160.00,
+        "photo_url": "https://i.imgur.com/h2MTDFY.jpg"
+    },
+    {
+        "name": "Women's Khaki Fedora",
+        "type": "Women",
+        "category": "Headwear",
+        "price": 160.00,
+        "photo_url":"https://i.imgur.com/qfpRoMU.jpg"
+    },
+    {
+        "name": "Women's Black Heel",
+        "type": "Footwear",
+        "category": "Footwear",
+        "price": 350.00,
+        "photo_url": "https://i.imgur.com/X0Boqk0.jpg"
+    },
+    {
+        "name": "Women's White Heel",
+        "type": "Footwear",
+        "category": "Footwear",
+        "price": 350.00,
+        "photo_url": "https://i.imgur.com/FDX0VQK.jpg"
+    },
+    {
+        "name": "Women's Black Long Sleeve",
+        "type": "Women",
+        "category": "Tops",
+        "price": 190.00,
+        "photo_url": "https://i.imgur.com/0jdE2Qy.jpg"
+    },
+    {
+        "name": "Women's White Long Sleeve",
+        "type": "Women",
+        "category": "Tops",
+        "price": 190.00,
+        "photo_url": "https://i.imgur.com/ZB8tT6Y.jpg"
+    },
+    {
+        "name": "Women's Blue Long Sleeve",
+        "type": "Women",
+        "category": "Tops",
+        "price": 190.00,
+        "photo_url": "https://i.imgur.com/SRmpb87.jpg"
+    },
+    {
+        "name": "Women's Black Pant",
+        "type": "Women",
+        "category": "Bottoms",
+        "price": 240.00,
+        "photo_url": "https://i.imgur.com/FLszYdk.jpg"
+    },
+    {
+        "name": "Women's Blue Pant",
+        "type": "Women",
+        "category": "Bottoms",
+        "price": 240.00,
+        "photo_url":"https://i.imgur.com/6xsvs6e.jpg"
+    },
+    {
+        "name": "Women's Khaki Pant",
+        "type": "Women",
+        "category": "Bottoms",
+        "price": 240.00,
+        "photo_url": "https://i.imgur.com/fBET8Sd.jpg"
     }
 ]
