@@ -27,11 +27,13 @@ const { Product } = require('../../models');
 // });
 
 // GET one category
-router.get('/outerwear', async(req, res) => {
+router.get('/category/:name', async(req, res) => {
+        const name = `${name}`;
+        console.log(name);
         try {
           const dbProductData = await Product.findAll( {
             where: {
-              category: "Outerwear"
+              category: name
           },
           attributes: [
             'id', 'name', 'type', 'category', 'price', 'photo_url'

@@ -42,11 +42,11 @@
                 Category
               </a>
               <div class="navbar-dropdown">
-                <a id="top" href="/category/top" class="navbar-item">
-                  Top
+                <a id="top" href="/category/tops" class="navbar-item">
+                  Tops
                 </a>
-                <a id="bottom" href="/category/bottom" class="navbar-item">
-                  Bottom
+                <a id="bottom" href="/category/bottoms" class="navbar-item">
+                  Bottoms
                 </a>
                 <a id="headwear" href="/category/headwear" class="navbar-item">
                   Headwear
@@ -73,6 +73,7 @@
                   </svg></a>
                 <button id="logout" class="button has-background-link-light has-text-link-dark">Log out</button>
                 {{else}}
+
                 <a class="button has-background-link-light has-text-link-dark" href="/signup">
                   <strong>Sign up</strong>
                 </a>
@@ -101,6 +102,8 @@
   {{#if logged_in}}
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="/js/logout.js"></script>
+  <script src="/js/product-details.js"></script>
+
   {{/if}}
 </body>
 
