@@ -1,17 +1,15 @@
 <section class="section has-background-light is-clipped">
-  {{#each category}}
-  <a href="/category/{{this.category}}">
-    <div class="container">
-      <h2 class="title mb-16 mb-24-tablet">{{this.category}}</h2>
-      <hr>
-      <hr>
-      <div class="mb-20 columns is-multiline">
-        {{#each product}}
-        {{> product}}
-        {{/each}}
-      </div>
-    </div>
-  </a>
-  {{/each}}
-</section>
+    <a href="/type/{{product.category}}">
+        <div class="container">
+            <h2 class="title mb-16 mb-24-tablet">{{product.category}}</h2>
+            <div class="mb-20 columns is-multiline">
+                {{#each products as |product| }}
+                {{> product}}
+                {{/each}}
+            </div>
 
+            <hr>
+            <hr>
+        </div>
+    </a>
+</section>

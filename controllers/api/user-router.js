@@ -25,6 +25,19 @@ router.post('/', async (req, res) => {
     }
 });
 
+// Logout router
+router.get('/logout', (req, res) => {
+    console.log('logout');
+    if (req.session.logged_in) {
+        req.session.destroy(() => {
+            res.status(204).end();
+        });
+        // } else {
+        //     res.status(404).end();
+    }
+});
+
+
 // GET /api/users
 router.get('/', (req, res) => {
     // Access our User model and run .findAll() method
@@ -125,17 +138,6 @@ router.post('/login', (req, res) => {
             });
         });
     });
-});
-
-// Logout router
-router.post('/logout', (req, res) => {
-    if (req.session.logged_in) {
-        req.session.destroy(() => {
-            res.status(204).end();
-        });
-        // } else {
-        //     res.status(404).end();
-    }
 });
 
 module.exports = router;

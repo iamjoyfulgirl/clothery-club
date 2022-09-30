@@ -23,6 +23,149 @@ router.get('/product/:id', async (req, res) => {
   }
 });
 
+router.get('/type/men', async(req, res) => {
+  try {
+    const productData = await Product.findAll( {
+      where: {
+        type: "Men"
+    },
+    attributes: [
+      'id', 'name', 'type', 'category', 'price', 'photo_url'
+    ]})
+
+    const products = productData.map((product) => product.get({ plain: true }));
+    res.render('type', { products });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.get('/type/women', async(req, res) => {
+try {
+  const productData = await Product.findAll( {
+    where: {
+      type: "Women"
+  }})
+  console.log(productData);
+
+  const products = productData.map((product) => product.get({ plain: true }));
+  console.log(products);
+  res.render('type', { products });
+} catch (err) {
+  console.log(err);
+  res.status(500).json(err);
+}
+});
+
+router.get('/type/footwear', async(req, res) => {
+  try {
+    const productData = await Product.findAll( {
+      where: {
+        type: "Footwear"
+    },
+    attributes: [
+      'id', 'name', 'type', 'category', 'price', 'photo_url'
+    ]})
+
+    const products = productData.map((product) => product.get({ plain: true }));
+    res.render('type', { products });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.get('/category/tops', async(req, res) => {
+  try {
+    const productData = await Product.findAll( {
+      where: {
+        category: "Tops"
+    },
+    attributes: [
+      'id', 'name', 'type', 'category', 'price', 'photo_url'
+    ]})
+
+    const products = productData.map((product) => product.get({ plain: true }));
+    res.render('category', { products });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.get('/category/bottoms', async(req, res) => {
+  try {
+    const productData = await Product.findAll( {
+      where: {
+        category: "Bottoms"
+    },
+    attributes: [
+      'id', 'name', 'type', 'category', 'price', 'photo_url'
+    ]})
+
+    const products = productData.map((product) => product.get({ plain: true }));
+    res.render('category', { products });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.get('/category/headwear', async(req, res) => {
+  try {
+    const productData = await Product.findAll( {
+      where: {
+        category: "Headwear"
+    },
+    attributes: [
+      'id', 'name', 'type', 'category', 'price', 'photo_url'
+    ]})
+
+    const products = productData.map((product) => product.get({ plain: true }));
+    res.render('category', { products });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.get('/category/outerwear', async(req, res) => {
+  try {
+    const productData = await Product.findAll( {
+      where: {
+        category: "Outerwear"
+    },
+    attributes: [
+      'id', 'name', 'type', 'category', 'price', 'photo_url'
+    ]})
+
+    const products = productData.map((product) => product.get({ plain: true }));
+    res.render('category', { products });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.get('/category/accessories', async(req, res) => {
+  try {
+    const productData = await Product.findAll( {
+      where: {
+        category: "Accessory"
+    },
+    attributes: [
+      'id', 'name', 'type', 'category', 'price', 'photo_url'
+    ]})
+
+    const products = productData.map((product) => product.get({ plain: true }));
+    res.render('category', { products });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 router.get('/', async (req, res) => {
   try {
     // Get all products and JOIN with user data
@@ -39,6 +182,17 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+router.get('/cart/:id', async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.params.id, {});
+
+    const user = userData
+
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
 
 router.get('/signup', (req, res) => {
   if (req.session.logged_in) {
