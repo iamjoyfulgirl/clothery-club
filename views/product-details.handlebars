@@ -2,8 +2,8 @@
   <div class="container px-4 mx-auto">
     <div class="flex flex-wrap -mx-4">
       <div class="w-full lg:w-1/2 px-4 mb-16 lg:mb-0">
-        <div class="flex -mx-4 flex-wrap items-center justify-between lg:justify-start lg:items-start xl:items-center">
-          <div class="w-full sm:w-auto min-w-max px-4 text-center flex sm:flex-col items-center justify-center">
+        <div class="w-full sm:w-9/12 px-5">
+          {{!-- <div class="w-full sm:w-auto min-w-max px-4 text-center flex sm:flex-col items-center justify-center">
             <a class="inline-block sm:mb-12 mr-4 sm:mr-0 transform -rotate-90 sm:transform-none hover:text-darkBlueGray-400"
               href="#">
               <svg width="12" height="8" viewbox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -12,7 +12,7 @@
                   fill="currentColor"></path>
               </svg>
             </a>
-            {{!-- <a class="h-30 block mb-4 mr-2 sm:mr-0" href="/product/{{id}}">
+            <a class="h-30 block mb-4 mr-2 sm:mr-0" href="/product/{{id}}">
               <img class="h-30 w-20" src="/photo/{{photo_url}}" alt="">
             </a>
             <a class="hidden sm:block h-30 mb-4 mr-2 sm:mr-0" href="/product/{{id}}">
@@ -24,7 +24,7 @@
             </a>
             <a class="h-30 block mb-4 sm:mb-12 mr-4 sm:mr-0" href="/product/{{id}}">
               <img class="h-30 w-20" src="{{photo_url}}" alt="">
-            </a> --}}
+            </a>
             <a class="inline-block transform -rotate-90 sm:transform-none hover:text-darkBlueGray-400" href="#">
               <svg width="12" height="8" viewbox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -32,7 +32,7 @@
                   fill="currentColor"></path>
               </svg>
             </a>
-          </div>
+          </div> --}}
           <div class="w-full sm:w-9/12 px-4">
             <img class="mb-5" src="{{product.photo_url}}" alt="">
             <p class="text-sm text-gray-300">Roll over image to zoom in</p>
@@ -50,9 +50,7 @@
         </div>
         {{!-- <div class="mb-6">
           <h4 class="mb-3 font-heading font-medium">
-            <span>Color:</span> {{!-- only have 2 option: color and size, color has option id 0 and
-            size option id 1 --}}
-            {{!-- option 0 is Color --}}
+            <span>Color:</span> 
             <span class="text-gray-400"></span>
           </h4>
           {{#each color }} 
@@ -63,7 +61,7 @@
         </div>
         <div class="mb-6">
           <h4 class="mb-3 font-heading font-medium">
-            <span>Size:</span> {{!-- option 1 is Size --}}
+            <span>Size:</span> 
             <span class="text-gray-400"></span>
           </h4>
           {{#each size }}
