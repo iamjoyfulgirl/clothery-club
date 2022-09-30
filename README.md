@@ -14,7 +14,7 @@ This application is a full-stack e-commerce application that was created as a gr
 
 ## Installation
 
-An interactive full-stack application using Node.js, Handlebars, Sequelize, RESTful APIs, SweetAlert2, authentication, and MySQL2. To view the application, click the link below for the deployed application; no installation is needed. 😊
+An interactive full-stack application using Node.js, Handlebars, Sequelize, bcrypt, RESTful APIs, SweetAlert2, authentication, and MySQL2. To view the application, click the link below for the deployed application; no installation is needed. 😊
 
 ## Link to deployed application: https://arcane-waters-66340.herokuapp.com/
 ## Link to Github repository: https://github.com/iamjoyfulgirl/clothery-club
