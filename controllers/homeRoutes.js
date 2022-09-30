@@ -34,7 +34,9 @@ router.get('/type/men', async(req, res) => {
     ]})
 
     const products = productData.map((product) => product.get({ plain: true }));
-    res.render('type', { products });
+    res.render('type', { products,
+      logged_in: req.session.logged_in
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -51,7 +53,9 @@ try {
 
   const products = productData.map((product) => product.get({ plain: true }));
   console.log(products);
-  res.render('type', { products });
+  res.render('type', { products,
+    logged_in: req.session.logged_in
+  });
 } catch (err) {
   console.log(err);
   res.status(500).json(err);
@@ -69,7 +73,9 @@ router.get('/type/footwear', async(req, res) => {
     ]})
 
     const products = productData.map((product) => product.get({ plain: true }));
-    res.render('type', { products });
+    res.render('type', { products,
+      logged_in: req.session.logged_in
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -87,7 +93,10 @@ router.get('/category/tops', async(req, res) => {
     ]})
 
     const products = productData.map((product) => product.get({ plain: true }));
-    res.render('category', { products });
+    res.render('category', { 
+      products,
+      logged_in: req.session.logged_in
+     });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -105,7 +114,10 @@ router.get('/category/bottoms', async(req, res) => {
     ]})
 
     const products = productData.map((product) => product.get({ plain: true }));
-    res.render('category', { products });
+    res.render('category', { 
+      products,
+      logged_in: req.session.logged_in
+     });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -123,7 +135,10 @@ router.get('/category/headwear', async(req, res) => {
     ]})
 
     const products = productData.map((product) => product.get({ plain: true }));
-    res.render('category', { products });
+    res.render('category', { 
+      products,
+      logged_in: req.session.logged_in
+     });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -141,7 +156,10 @@ router.get('/category/outerwear', async(req, res) => {
     ]})
 
     const products = productData.map((product) => product.get({ plain: true }));
-    res.render('category', { products });
+    res.render('category', { 
+      products,
+      logged_in: req.session.logged_in
+     });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -159,7 +177,10 @@ router.get('/category/accessories', async(req, res) => {
     ]})
 
     const products = productData.map((product) => product.get({ plain: true }));
-    res.render('category', { products });
+    res.render('category', { 
+      products,
+      logged_in: req.session.logged_in
+     });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
