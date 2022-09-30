@@ -3,7 +3,7 @@
         <a class="mt-6 mb-2 px-6 is-block" href="/product/{{id}}">
             <img class="mx-auto mb-5 image" style="height: 224px; object-fit: contain;" src="{{photo_url}}" alt="">
             <h5 class="title is-size-5 mb-2">{{name}}</h5>
-            <p class="has-text-info is-size-5 has-text-weight-bold">{{price}}</p>
+            <p class="has-text-info is-size-5 has-text-weight-bold">${{price}}</p>
             {{#each product.id }}
             {{> product-details}}
             {{/each}}
